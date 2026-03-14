@@ -21,8 +21,8 @@ def proxy():
         if not data:
             return jsonify({"error": "No JSON data received"}), 400
 
-        # 強制使用 MiniMax M2.5（你可以之後改成從 data 讀 model）
-        data['model'] = 'minimax/m2.5'
+        # 強制使用 MiniMax M2.5（使用 OpenRouter 目前正確的 model ID）
+        data['model'] = 'minimax/minimax-m2.5'
 
         headers = {
             "Authorization": f"Bearer {OPENROUTER_KEY}",
